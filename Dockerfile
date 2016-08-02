@@ -1,9 +1,9 @@
-FROM kollee/alpine-java:jre-8
+FROM kollee/alpine-java:latest
 
 RUN apk add --no-cache su-exec
 
 ENV ELASTICSEARCH_MAJOR 2.3
-ENV ELASTICSEARCH_VERSION 2.3.3
+ENV ELASTICSEARCH_VERSION 2.3.4
 
 COPY install_elasticsearch.sh /
 RUN /install_elasticsearch.sh

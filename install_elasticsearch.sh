@@ -11,8 +11,8 @@ wget -O - "http://download.elastic.co/elasticsearch/release/org/elasticsearch/di
 ln -s $INSTALL_PATH/elasticsearch-$ELASTICSEARCH_VERSION $INSTALL_PATH/elasticsearch
 
 echo "Add group and user 'elasticsearch'"
-addgroup elasticsearch
-adduser -D -s /bin/false -h $INSTALL_PATH/elasticsearch -G elasticsearch elasticsearch
+addgroup -g 494 elasticsearch
+adduser -u 494 -D -s /bin/false -h $INSTALL_PATH/elasticsearch -G elasticsearch elasticsearch
 chown -R elasticsearch:elasticsearch $INSTALL_PATH/elasticsearch
 
 INSTALL_PATH=$INSTALL_PATH/elasticsearch
